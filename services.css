@@ -1,0 +1,859 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #230511;
+    --maroon: #5e0b2d;
+    --deep: #50001e;
+    --paper: #f5f3f0;
+    --card: #fffefb;
+    --red: #ff3b4e;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+button {
+    font: inherit;
+    background: var(--maroon);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .25s, transform .25s, box-shadow .25s;
+}
+
+button:hover {
+    background: #470820;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(94, 11, 45, .35);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 2px;
+}
+
+.photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #d8d2cc;
+    border-radius: 3px;
+}
+
+.bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.logo {
+    width: 152px;
+    height: auto;
+    background: var(--paper);
+    border-radius: 4px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+}
+
+.header-right::before {
+    content: "";
+    position: absolute;
+    right: 258px;
+    top: 50%;
+    width: 28px;
+    height: 1px;
+    background: #d6303f;
+    z-index: 3;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 38px;
+    background: var(--paper);
+    padding: 0 38px;
+    height: 65px;
+    border-radius: 4px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--ink);
+}
+
+nav a.active,
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.header-right button {
+    font-size: 24px;
+    height: 65px;
+    padding: 0 56px;
+}
+
+
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    padding: 30px 14%;
+    background: var(--paper);
+    font-size: 16px;
+}
+
+.f-col p {
+    margin-bottom: 18px;
+    line-height: 1.05;
+}
+
+.f-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 34px;
+}
+
+.f-right {
+    text-align: right;
+}
+
+.f-logo {
+    width: 150px;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 18px;
+}
+
+/* Shared */
+
+.dot {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 9px;
+    height: 9px;
+    background: var(--red);
+}
+
+
+
+.s-hero {
+    position: relative;
+    height: clamp(420px, 43vw, 860px);
+    background: #cfd6dd;
+    overflow: hidden;
+}
+
+.s-title {
+    text-align: center;
+    padding: 90px 5% 70px;
+}
+
+.s-title h1 {
+    font-size: clamp(38px, 6.2vw, 118px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+}
+
+.s-title p {
+    font-size: clamp(18px, 1.6vw, 30px);
+    max-width: 700px;
+    margin: 26px auto 0;
+    line-height: 1.1;
+}
+
+.s-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 9px;
+}
+
+.s-card {
+    position: relative;
+    background: var(--card);
+    padding: 23px 23px 34px;
+}
+
+.s-card .photo {
+    aspect-ratio: 881 / 415;
+    height: auto;
+}
+
+.s-card h3 {
+    font-size: clamp(26px, 2.2vw, 42px);
+    margin: 32px 0 34px;
+}
+
+.s-card p {
+    font-size: clamp(16px, 1.3vw, 24px);
+    max-width: 22ch;
+    line-height: 1.1;
+}
+
+.s-card .dot {
+    width: 18px;
+    height: 18px;
+    right: 33px;
+    bottom: 26px;
+}
+
+.s-cta {
+    position: relative;
+    overflow: hidden;
+    margin-top: 18px;
+    min-height: clamp(440px, 32vw, 640px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #e8edef;
+    padding: 60px 5%;
+}
+
+.s-cta-text {
+    position: relative;
+    z-index: 1;
+}
+
+.s-cta h2 {
+    font-size: clamp(38px, 5.6vw, 108px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    max-width: 12ch;
+    margin: 0 auto 40px;
+}
+
+.s-cta p {
+    font-size: clamp(18px, 1.6vw, 30px);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.1;
+}
+
+.s-cta button {
+    font-size: clamp(16px, 1.3vw, 24px);
+    height: 62px;
+    padding: 0 32px;
+}
+
+.s-tires {
+    line-height: 0;
+}
+
+.s-tires img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+
+@media (max-width: 900px) {
+    .s-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .logo {
+        width: 110px;
+    }
+
+    .header-right::before {
+        display: none;
+    }
+
+    nav ul {
+        gap: 14px;
+        padding: 0 16px;
+        height: 48px;
+    }
+
+    nav a,
+    .header-right button {
+        font-size: 16px;
+    }
+
+    .header-right button {
+        height: 48px;
+        padding: 0 18px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        padding: 30px 6%;
+    }
+
+    .f-links {
+        padding-top: 0;
+    }
+
+    .f-right {
+        text-align: left;
+    }
+
+    .f-logo {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    header {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+    }
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+
+
+footer a {
+    text-underline-offset: 4px;
+    transition: opacity .2s;
+}
+
+footer a:hover {
+    opacity: .6;
+}
+
+.hero .bg-img,
+.s-hero .bg-img {
+    scale: 1.1;
+    animation: settle 2.6s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+
+
+.card,
+.s-card,
+.member,
+.purpose-card,
+.fleet-card {
+    box-shadow: 0 12px 36px rgba(35, 5, 17, .06);
+}
+
+.card:hover,
+.s-card:hover,
+.member:hover {
+    box-shadow: 0 24px 54px rgba(35, 5, 17, .15);
+}
+
+.dot {
+    transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.card:hover .dot,
+.s-card:hover .dot {
+    transform: scale(1.7) rotate(90deg);
+}
+
+
+
+@media (min-width: 901px) {
+    .card:nth-child(1):hover {
+        transform: none;
+    }
+
+    .card:nth-child(2):hover {
+        transform: translateY(100px);
+    }
+
+    .card:nth-child(3):hover {
+        transform: translateY(210px);
+    }
+}
+
+
+
+.intro p,
+.intro a,
+.services > h2,
+.services-head,
+.cards > *,
+.advantage .adv-inner > div:first-child,
+.adv-list > *,
+.fleet-card,
+.cta-stack,
+.s-title h1,
+.s-title p,
+.s-grid > *,
+.s-cta-text,
+.s-tires,
+.purpose-card,
+.mission p,
+.compass h2,
+.values > *,
+.team h2,
+.team-grid > * {
+    animation: fadeUp .9s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.cards > :nth-child(2),
+.s-grid > :nth-child(2),
+.adv-list > :nth-child(2),
+.values > :nth-child(2),
+.team-grid > :nth-child(2) {
+    animation-delay: .12s;
+}
+
+.cards > :nth-child(3),
+.s-grid > :nth-child(3),
+.adv-list > :nth-child(3),
+.values > :nth-child(3),
+.team-grid > :nth-child(3) {
+    animation-delay: .24s;
+}
+
+.cards > :nth-child(4),
+.s-grid > :nth-child(4),
+.adv-list > :nth-child(4),
+.values > :nth-child(4),
+.team-grid > :nth-child(4) {
+    animation-delay: .36s;
+}
+
+@supports (animation-timeline: view()) {
+    .intro p,
+    .intro a,
+    .services > h2,
+    .services-head,
+    .cards > *,
+    .advantage .adv-inner > div:first-child,
+    .adv-list > *,
+    .fleet-card,
+    .cta-stack,
+    .s-title h1,
+    .s-title p,
+    .s-grid > *,
+    .s-cta-text,
+    .s-tires,
+    .purpose-card,
+    .mission p,
+    .compass h2,
+    .values > *,
+    .team h2,
+    .team-grid > * {
+        animation: fadeUp linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+
+    .cards > :nth-child(n),
+    .s-grid > :nth-child(n),
+    .adv-list > :nth-child(n),
+    .values > :nth-child(n),
+    .team-grid > :nth-child(n) {
+        animation-delay: 0s;
+    }
+}
+
+
+
+@supports (animation-timeline: scroll()) {
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        height: 3px;
+        background: var(--red);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: grow linear both;
+        animation-timeline: scroll(root);
+    }
+
+    .hero .bg-img,
+    .s-hero .bg-img {
+        animation: settle 2.6s cubic-bezier(.2, .7, .2, 1) both, parallax linear both;
+        animation-timeline: auto, scroll(root);
+        animation-range: normal, 0 340px;
+    }
+}
+
+
+
+@supports (animation-timeline: scroll()) {
+    @media (min-width: 901px) {
+        .logo {
+            animation: compactLogo linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 90px;
+        }
+
+        nav ul,
+        .header-right button {
+            animation: compactBar linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 90px;
+        }
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .hero .bg-img,
+    .s-hero .bg-img {
+        scale: 1.1;
+    }
+}
+
+
+
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes settle {
+    from {
+        transform: scale(1.15);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+
+header {
+    animation: fadeUp .8s ease both;
+}
+
+
+
+.hero h1 {
+    animation: fadeUp 1s ease both;
+}
+
+.hero .bg-img {
+    animation: settle 2.5s ease both;
+}
+
+.intro p,
+.intro a {
+    animation: fadeUp .9s ease both;
+}
+
+.services > h2 {
+    animation: slideLeft .9s ease both;
+}
+
+.services-head {
+    animation: slideRight .9s ease both;
+}
+
+.cards > * {
+    animation: fadeUp 1s ease both;
+}
+
+.cards > :nth-child(2) {
+    animation-delay: .2s;
+}
+
+.cards > :nth-child(3) {
+    animation-delay: .4s;
+}
+
+.advantage .adv-inner > div:first-child {
+    animation: slideLeft 1s ease both;
+}
+
+.adv-list li {
+    animation: slideRight 1s ease both;
+}
+
+.fleet-card {
+    animation: zoomIn 1s ease both;
+}
+
+.cta-stack {
+    animation: fadeUp 1s ease both;
+}
+
+
+
+.s-title h1 {
+    animation: slideLeft 1s ease both;
+}
+
+.s-title p {
+    animation: slideRight 1s ease both;
+}
+
+.s-grid > * {
+    animation: zoomIn .9s ease both;
+}
+
+.s-grid > :nth-child(2) {
+    animation-delay: .2s;
+}
+
+.s-grid > :nth-child(3) {
+    animation-delay: .4s;
+}
+
+.s-cta-text {
+    animation: fadeUp 1s ease both;
+}
+
+.s-tires {
+    animation: slideRight 1s ease both;
+}
+
+.s-hero .bg-img {
+    animation: settle 2.5s ease both;
+}
+
+
+
+.purpose-card {
+    animation: slideLeft 1s ease both;
+}
+
+.mission p {
+    animation: fadeUp 1s ease both;
+}
+
+.compass h2 {
+    animation: zoomIn 1s ease both;
+}
+
+.values > * {
+    animation: fadeUp .9s ease both;
+}
+
+.values > :nth-child(2) {
+    animation-delay: .2s;
+}
+
+.values > :nth-child(3) {
+    animation-delay: .4s;
+}
+
+.team h2 {
+    animation: slideLeft 1s ease both;
+}
+
+.team-grid > * {
+    animation: zoomIn .9s ease both;
+}
+
+.team-grid > :nth-child(2) {
+    animation-delay: .2s;
+}
+
+.team-grid > :nth-child(3) {
+    animation-delay: .4s;
+}
+
+
+
+.c-left h1 {
+    animation: slideLeft 1s ease both;
+}
+
+.c-lead {
+    animation: fadeUp 1s ease .2s both;
+}
+
+.c-info {
+    animation: fadeUp 1s ease .4s both;
+}
+
+.c-form {
+    animation: slideRight 1s ease both;
+}
+
+
+
+.field {
+    transition: border-color .3s ease;
+}
+
+.field:focus-within {
+    border-bottom-color: var(--maroon);
+}
+
+.field label {
+    transition: color .3s ease;
+}
+
+.field:focus-within label {
+    color: var(--maroon);
+}
+
+
+
+button {
+    transition: background .25s, transform .25s, box-shadow .25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(94, 11, 45, .3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.zoom {
+    display: block;
+    overflow: hidden;
+}
+
+.zoom .photo {
+    transition: transform .5s ease;
+}
+
+.zoom:hover .photo {
+    transform: scale(1.06);
+}
+
+
+
+footer a {
+    transition: opacity .3s ease;
+}
+
+footer a:hover {
+    opacity: .6;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
