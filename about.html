@@ -10,38 +10,55 @@
 </head>
 <body>
 
+
 <header>
-    <a href="index.html"><img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit"></a>
+    <img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
     <div class="header-right">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
             </ul>
         </nav>
+
         <button onclick="location.href='contact.html'">GET A QUOTE</button>
     </div>
 </header>
 
+
 <main>
-    <!-- 1. Hero -->
+
     <section class="hero a-hero">
         <img class="bg-img" src="https://static.wixstatic.com/media/c837a6_14584077eab94e31bac4e8c398c62d04~mv2.jpg/v1/fill/w_1905,h_1031,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/c837a6_14584077eab94e31bac4e8c398c62d04~mv2.jpg" alt="">
-        <h1><span class="line"><span>The People and Principles</span></span><span class="line"><span>Driving Us Forward</span></span></h1>
+        <h1>
+            <span class="line"><span>The People and Principles</span></span>
+            <span class="line"><span>Driving Us Forward</span></span>
+        </h1>
     </section>
 
     <section class="intro a-intro">
         <p>Learn about the mission that fuels our commitment to logistical excellence.</p>
     </section>
 
-    <!-- 2. Purpose -->
     <section class="purpose">
         <div class="purpose-card">
             <h2>Our Purpose<br>in Motion</h2>
             <i class="dot dot-lg"></i>
-            <span class="zoom"><img class="photo" src="images/a-purpose.jpg" alt="Truck driving through the desert"></span>
+            <span class="zoom">
+                <img class="photo" src="images/a-purpose.jpg" alt="Truck driving through the desert">
+            </span>
         </div>
     </section>
 
@@ -49,7 +66,6 @@
         <p>We founded Vector Transit to create a new standard in freight transportation. Our mission is to empower businesses by providing a logistics service that is not just a link, but a strategic advantage in their supply chain, built on a foundation of integrity, innovation, and absolute dependability.</p>
     </section>
 
-   
     <section class="compass">
         <h2>The Compass<br>That Guides Us</h2>
         <ul class="values">
@@ -71,20 +87,21 @@
         </ul>
     </section>
 
-   
     <section class="team">
         <h2>Meet Our Strategists</h2>
         <div class="team-grid">
             <article class="member">
                 <span class="zoom"><img class="photo" src="images/a-elara.jpg" alt="Elara Vance"></span>
                 <h3>Elara Vance</h3>
-                <p>Founder &amp; CEO</p>
+                <p>Founder CEO</p>
             </article>
+
             <article class="member">
                 <span class="zoom"><img class="photo" src="images/a-kenji.jpg" alt="Kenji Moreau"></span>
                 <h3>Kenji Moreau</h3>
                 <p>Head of Operations</p>
             </article>
+
             <article class="member">
                 <span class="zoom"><img class="photo" src="images/a-sofia.jpg" alt="Sofia Brandt"></span>
                 <h3>Sofia Brandt</h3>
@@ -92,6 +109,7 @@
             </article>
         </div>
     </section>
+
 </main>
 
 <footer>
@@ -100,13 +118,15 @@
         <p><a href="mailto:info@mysite.com">info@mysite.com</a></p>
         <p>123-456-7890</p>
     </div>
+
     <div class="f-col f-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Accessibility Statement</a>
     </div>
+
     <div class="f-col f-right">
         <img class="f-logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
-        <p>&copy; 2026 by Vector Transit.</p>
+        <p>; 2026 by Vector Transit.</p>
     </div>
 </footer>
 

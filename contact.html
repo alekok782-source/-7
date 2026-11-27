@@ -12,15 +12,35 @@
 
 <header>
     <a href="index.html"><img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit"></a>
+
+    
+<header>
+    <img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
     <div class="header-right">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
             </ul>
         </nav>
+
+        <button onclick="location.href='contact.html'">GET A QUOTE</button>
+    </div>
+</header>
+
+
         <button onclick="location.href='contact.html'">GET A QUOTE</button>
     </div>
 </header>
@@ -29,15 +49,18 @@
     <div class="c-left">
         <h1>Connect With Our Team</h1>
         <p class="c-lead">Reach out for inquiries, quotes, or partnership opportunities. We’re here to help.</p>
+
         <div class="c-info">
             <div>
                 <h3>Address</h3>
                 <p>500 Terry Francine St<br>San Francisco, CA 94158</p>
             </div>
+
             <div>
                 <h3>Tel</h3>
                 <p>123-456-7890</p>
             </div>
+
             <div>
                 <h3>Email</h3>
                 <p>info@mysite.com</p>
@@ -47,21 +70,45 @@
 
     <form class="c-form" id="quote-form">
         <div class="c-row">
-            <div class="field"><label for="fn">First Name *</label><input id="fn" type="text" required></div>
-            <div class="field"><label for="ln">Last name *</label><input id="ln" type="text" required></div>
+            <div class="field">
+                <label for="fn">First Name *</label>
+                <input id="fn" type="text" required>
+            </div>
+
+            <div class="field">
+                <label for="ln">Last name *</label>
+                <input id="ln" type="text" required>
+            </div>
         </div>
-        <div class="field"><label for="em">Email *</label><input id="em" type="email" required></div>
+
+        <div class="field">
+            <label for="em">Email *</label>
+            <input id="em" type="email" required>
+        </div>
+
         <div class="field field-phone">
             <label for="ph">Phone *</label>
             <div class="phone-wrap">
                 <span class="globe" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 3l4 4 4-4"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>
+                    </svg>
+
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <path d="M1 3l4 4 4-4"/>
+                    </svg>
                 </span>
+
                 <input id="ph" type="tel" required>
             </div>
         </div>
-        <div class="field"><label for="co">Company</label><input id="co" type="text"></div>
+
+        <div class="field">
+            <label for="co">Company</label>
+            <input id="co" type="text">
+        </div>
+
         <div class="field field-select">
             <label for="sv">What service are you interested in? *</label>
             <select id="sv" required>
@@ -72,7 +119,12 @@
                 <option>Specialized Hauling</option>
             </select>
         </div>
-        <div class="field field-msg"><label for="ms">Message</label><textarea id="ms" rows="3"></textarea></div>
+
+        <div class="field field-msg">
+            <label for="ms">Message</label>
+            <textarea id="ms" rows="3"></textarea>
+        </div>
+
         <button type="submit" class="c-send">SEND MESSAGE</button>
     </form>
 </main>
@@ -83,23 +135,18 @@
         <p><a href="mailto:info@mysite.com">info@mysite.com</a></p>
         <p>123-456-7890</p>
     </div>
+
     <div class="f-col f-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Accessibility Statement</a>
     </div>
+
     <div class="f-col f-right">
         <img class="f-logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
         <p>&copy; 2026 by Vector Transit.</p>
     </div>
 </footer>
 
-<script>
-    document.getElementById('quote-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var b = this.querySelector('.c-send');
-        b.textContent = 'MESSAGE SENT';
-        this.reset();
-    });
-</script>
+
 </body>
 </html>

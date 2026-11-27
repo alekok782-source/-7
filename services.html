@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,68 +11,86 @@
 </head>
 <body>
 
+
 <header>
-    <a href="index.html"><img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit"></a>
+    <img class="logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
     <div class="header-right">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
             </ul>
         </nav>
+
         <button onclick="location.href='contact.html'">GET A QUOTE</button>
     </div>
 </header>
 
-<main>
 
+<main>
 
     <section class="s-title">
         <h1>Core Transport Services</h1>
         <p>Scalable, secure, and smart logistics designed for the modern marketplace.</p>
     </section>
 
-
-    
     <section class="s-hero">
         <img class="bg-img" src="images/s-hero.jpg" alt="Truck at sunset in the desert">
     </section>
 
-  
-
-    
     <section class="s-grid">
         <article class="s-card">
-            <span class="zoom"><img class="photo" src="images/ftl.jpg" alt="Full truckload"></span>
+            <span class="zoom">
+                <img class="photo" src="images/ftl.jpg" alt="Full truckload">
+            </span>
             <h3>Full Truckload (FTL)</h3>
             <p>Dedicated, direct transport for your high-volume shipments.</p>
             <i class="dot"></i>
         </article>
+
         <article class="s-card">
-            <span class="zoom"><img class="photo" src="images/ltl.jpg" alt="Less-than-truckload van"></span>
+            <span class="zoom">
+                <img class="photo" src="images/ltl.jpg" alt="Less-than-truckload van">
+            </span>
             <h3>Less-Than-Truckload (LTL)</h3>
             <p>Cost-effective solutions for smaller freight, consolidated for efficiency.</p>
             <i class="dot"></i>
         </article>
+
         <article class="s-card">
-            <span class="zoom"><img class="photo" src="images/s-expedited.jpg" alt="Expedited freight"></span>
+            <span class="zoom">
+                <img class="photo" src="images/s-expedited.jpg" alt="Expedited freight">
+            </span>
             <h3>Expedited Freight</h3>
             <p>Time-critical delivery with guaranteed speed and precision.</p>
             <i class="dot"></i>
         </article>
+
         <article class="s-card">
-            <span class="zoom"><img class="photo" src="images/s-hauling.jpg" alt="Specialized hauling"></span>
+            <span class="zoom">
+                <img class="photo" src="images/s-hauling.jpg" alt="Specialized hauling">
+            </span>
             <h3>Specialized Hauling</h3>
             <p>Expert handling for oversized, high-value, or temperature-sensitive cargo.</p>
             <i class="dot"></i>
         </article>
     </section>
 
-  
     <section id="contact" class="s-cta">
         <img class="bg-img" src="images/s-cta.jpg" alt="">
+
         <div class="s-cta-text">
             <h2>Partner with a Leader in Logistics</h2>
             <p>Request a personalized quote and discover a more reliable way to ship.</p>
@@ -82,6 +101,7 @@
     <section class="s-tires">
         <img src="images/s-tires.jpg" alt="Trailer wheels">
     </section>
+
 </main>
 
 <footer>
@@ -90,15 +110,18 @@
         <p><a href="mailto:info@mysite.com">info@mysite.com</a></p>
         <p>123-456-7890</p>
     </div>
+
     <div class="f-col f-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Accessibility Statement</a>
     </div>
+
     <div class="f-col f-right">
         <img class="f-logo" src="https://static.wixstatic.com/media/c837a6_3f8882a903f44222818f6027ea8ba277~mv2.png" alt="Vector Transit">
-        <p>&copy; 2026 by Vector Transit.</p>
+        <p>2026 by Vector Transit.</p>
     </div>
 </footer>
 
 </body>
 </html>
+```

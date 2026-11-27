@@ -748,3 +748,119 @@ footer a:hover {
         scale: 1.1;
             }
 }
+
+
+
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--ink);
+    padding-bottom: 3px;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat;
+    transition: background-size .35s cubic-bezier(.2, .7, .2, 1);
+}
+
+nav a:hover,
+nav a.active {
+    background-size: 100% 1.5px;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    background: none;
+}
+
+
+
+/* BURGER MENU */
+
+#menu-toggle {
+    display: none;
+}
+
+.burger {
+    display: none;
+    width: 35px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 7px;
+    padding: 5px;
+    background: var(--paper);
+    border-radius: 4px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: var(--ink);
+    transition: .3s;
+}
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .burger {
+        display: flex;
+        position: relative;
+        z-index: 20;
+    }
+
+    .header-right {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 10px;
+        width: 220px;
+        background: var(--paper);
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 4px;
+        box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    }
+
+    .header-right nav ul {
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        background: transparent;
+    }
+
+    .header-right nav a {
+        font-size: 18px;
+    }
+
+    .header-right button {
+        width: 100%;
+        font-size: 14px;
+        height: 45px;
+        padding: 0 10px;
+    }
+
+    #menu-toggle:checked ~ .header-right {
+        display: flex;
+    }
+
+    #menu-toggle:checked + .burger span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    #menu-toggle:checked + .burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked + .burger span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
